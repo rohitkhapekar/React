@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo Repeat</title>
+    <meta name="description" content="A simple Todo list where Todos go to the bottom when completed and cycle through" />
+    <meta name="keywords" content="Todo, Repeat, Todo List" />
+    <meta name="author" content="Kent C. Dodds" />
+    <meta name="theme-color" content="#9b4dca"/>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #app {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles/milligram.min.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>
+        Loading...
+        <br />
+        <small>Vote for your top hack idea</small>
+      </h1>
+    </div>
+    <style>
+      .todo-list {
+        position: relative;
+      }
+
+      .todo-item {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+
+      button {
+        margin: 0 10px;
+      }
+      button.success {
+        background-color: #3BB272;
+        border-color: #3BB272;
+      }
+      button.danger {
+        background-color: #FFD07B;
+        border-color: #FFD07B;
+      }
+      button.success:hover, button.success:focus,
+      button.danger:hover, button.danger:focus {
+        background-color: #606c76;
+        border-color: #606c76;
+        color: #fff;
+        outline: 0;
+      }
+    </style>
+    <script src="index.js"></script>
+  </body>
+</html>
+

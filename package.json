@@ -1,0 +1,49 @@
+{
+  "name": "repeat-todo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple app for repeating Todos",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build": "quik --bundle index.js --output dist/index.js --production",
+    "copy": "npm-run-all copy:*",
+    "copy:root": "cpy favicon.png service-worker.js launcher-* manifest.json index.html dist/",
+    "copy:styles": "cpy \"styles/*\" dist/styles",
+    "start": "quik",
+    "predeploy": "npm-run-all clean --parallel build copy",
+    "deploy": "surge --project ./dist --domain https://repeat-todo.surge.sh",
+    "serve:dist": "http-server dist",
+    "user-for-deploy": "echo kent+repeat-todo@doddsfamily.us",
+    "test": "eslint ."
+  },
+  "keywords": [],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "cpy-cli": "1.0.0",
+    "eslint": "2.5.1",
+    "eslint-config-kentcdodds": "6.0.1",
+    "eslint-plugin-react": "4.2.3",
+    "http-server": "0.9.0",
+    "npm-run-all": "1.5.1",
+    "quik": "0.4.6",
+    "rimraf": "2.5.2",
+    "surge": "0.17.7"
+  },
+  "dependencies": {
+    "an-uuid": "^1.0.0",
+    "react-motion": "^0.4.2"
+  },
+  "eslintConfig": {
+    "extends": "kentcdodds/react",
+    "rules": {
+      "comma-dangle": [
+        1,
+        "always-multiline"
+      ],
+      "no-console": 0,
+      "no-alert": 0
+    }
+  }
+}
